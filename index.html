@@ -19,6 +19,23 @@ iframe {
 	animation: MoveUpDown 275s linear infinite;
 	top: 0;
 }
+	
+#mobile-play {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-top: 30%;
+	font-size: 30px;
+	text-align: center;
+}
+	
+@media screen and (min-width: 800px) {
+	#mobile-play {
+		display: none;
+	}
+}
 
 @keyframes MoveUpDown {
   0% {
@@ -32,11 +49,19 @@ iframe {
   }
 }
 </style>
-
+<script type="text/javascript">
+function play() {
+	document.getElementById('audio').play();
+	var element = document.getElementById("mobile-play");
+	element.outerHTML = "";
+	delete element;
+}
+</script>
 </head>
 
 <body>
-<audio src="sad.mp3" autoplay loop></audio>
+<audio src="sad.mp3" autoplay loop id="audio"></audio>
+	<div id="mobile-play" onclick="play()">▶</div>
 <div class="container">
 	<iframe scrolling="no" src="https://cryptowat.ch/" width="100%" height="400%"></iframe>
 </div>
