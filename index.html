@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Cryptomood</title>
+<style>
+body, html {
+	margin: 0;
+	overflow: hidden;
+	height: 100%;
+}
+
+.container {
+	position: relative;
+	height: 100%;
+}
+
+iframe {
+	border: none;
+	position: absolute;
+	animation: MoveUpDown 275s linear infinite;
+	top: 0;
+}
+
+@keyframes MoveUpDown {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -200%;
+  }
+  100% {
+    top: 0;
+  }
+}
+</style>
+
+</head>
+
+<body>
+<audio src="sad.mp3" autoplay></audio>
+<div class="container">
+	<iframe scrolling="no" src="https://cryptowat.ch/" width="100%" height="400%"></iframe>
+</div>
+
+</body>
+</html>
